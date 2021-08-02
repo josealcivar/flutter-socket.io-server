@@ -23,6 +23,10 @@
             console.log("Perdimos coneccion")
         });
 
+        socket.emit('emitir-mensaje', {
+            nombre: 'Jose',
+            apellido: 'Alcivar'
+        });
 
         socket.emit('message', {
             nombre: 'Jose',
@@ -31,7 +35,13 @@
 
         socket.on('send message', (payload) => {
             console.log(payload.message);
-        })
+        });
+
+
+        socket.on('active-bands', (payload) => {
+            console.clear()
+            console.table(payload);
+        });
     </script>
 </body>
 
