@@ -17,11 +17,15 @@ app.use(express.json() );
 //Node Server
 const server = require('http').createServer(app);
 
+// module.exports.io = require('socket.io')(server);
+
+
+// require('./sockets/socket');
+
 module.exports.io = require('socket.io')(server);
 
 
-require('./sockets/socket');
-
+require('./sockets/socket-chat');
 
 // Path publico
 const publicPath = path.resolve(__dirname, 'public');

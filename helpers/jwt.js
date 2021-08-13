@@ -21,4 +21,6 @@ jwt.sign(payload, process.env.SECRETKEY,{
 }
 
 
-module.exports = generarJWT;
+module.exports = {
+    generarJWT
+};
